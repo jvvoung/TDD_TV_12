@@ -1,5 +1,6 @@
 C:/DEV/TDD_TV_Init/build/CMakeFiles/TunerTest.dir
 C:/DEV/TDD_TV_Init/build/CMakeFiles/TVControllerTest.dir
+C:/DEV/TDD_TV_Init/build/CMakeFiles/FakeTunerTest.dir
 C:/DEV/TDD_TV_Init/build/CMakeFiles/test.dir
 C:/DEV/TDD_TV_Init/build/CMakeFiles/edit_cache.dir
 C:/DEV/TDD_TV_Init/build/CMakeFiles/rebuild_cache.dir

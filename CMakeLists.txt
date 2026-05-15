@@ -25,6 +25,10 @@ target_link_libraries(TunerTest GTest::gtest_main GTest::gmock)
 add_executable(TVControllerTest test/TVControllerTest.cpp)
 target_link_libraries(TVControllerTest GTest::gtest_main GTest::gmock)
 
+add_executable(FakeTunerTest test/FakeTunerTest.cpp)
+target_link_libraries(FakeTunerTest GTest::gtest_main)
+
 include(GoogleTest)
 gtest_discover_tests(TunerTest)
 gtest_discover_tests(TVControllerTest)
+gtest_discover_tests(FakeTunerTest)

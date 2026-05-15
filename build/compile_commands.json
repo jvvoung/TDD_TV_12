@@ -12,6 +12,12 @@
   "output": "CMakeFiles/TVControllerTest.dir/test/TVControllerTest.cpp.obj"
 },
 {
+  "directory": "C:/DEV/TDD_TV_Init/build",
+  "command": "C:\\mingw64\\bin\\g++.exe  @CMakeFiles/FakeTunerTest.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\FakeTunerTest.dir\\test\\FakeTunerTest.cpp.obj -c C:\\DEV\\TDD_TV_Init\\test\\FakeTunerTest.cpp",
+  "file": "C:/DEV/TDD_TV_Init/test/FakeTunerTest.cpp",
+  "output": "CMakeFiles/FakeTunerTest.dir/test/FakeTunerTest.cpp.obj"
+},
+{
   "directory": "C:/DEV/TDD_TV_Init/build/_deps/googletest-build/googlemock",
   "command": "C:\\mingw64\\bin\\g++.exe  @CMakeFiles/gmock.dir/includes_CXX.rsp -g -std=c++17 -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=0 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles\\gmock.dir\\src\\gmock-all.cc.obj -c C:\\DEV\\TDD_TV_Init\\build\\_deps\\googletest-src\\googlemock\\src\\gmock-all.cc",
   "file": "C:/DEV/TDD_TV_Init/build/_deps/googletest-src/googlemock/src/gmock-all.cc",

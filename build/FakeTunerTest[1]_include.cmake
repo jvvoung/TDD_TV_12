@@ -1,0 +1,5 @@
+if(EXISTS "C:/DEV/TDD_TV_Init/build/FakeTunerTest[1]_tests.cmake")
+  include("C:/DEV/TDD_TV_Init/build/FakeTunerTest[1]_tests.cmake")
+else()
+  add_test(FakeTunerTest_NOT_BUILT FakeTunerTest_NOT_BUILT)
+endif()

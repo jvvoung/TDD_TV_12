@@ -197,6 +197,19 @@ TVControllerTest/fast:
 .PHONY : TVControllerTest/fast
 
 #=============================================================================
+# Target rules for targets named FakeTunerTest
+
+# Build rule for target.
+FakeTunerTest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 FakeTunerTest
+.PHONY : FakeTunerTest
+
+# fast build rule for target.
+FakeTunerTest/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\FakeTunerTest.dir\build.make CMakeFiles/FakeTunerTest.dir/build
+.PHONY : FakeTunerTest/fast
+
+#=============================================================================
 # Target rules for targets named gmock
 
 # Build rule for target.
@@ -247,6 +260,30 @@ gtest_main: cmake_check_build_system
 gtest_main/fast:
 	$(MAKE) $(MAKESILENT) -f _deps\googletest-build\googletest\CMakeFiles\gtest_main.dir\build.make _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build
 .PHONY : gtest_main/fast
+
+test/FakeTunerTest.obj: test/FakeTunerTest.cpp.obj
+.PHONY : test/FakeTunerTest.obj
+
+# target to build an object file
+test/FakeTunerTest.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\FakeTunerTest.dir\build.make CMakeFiles/FakeTunerTest.dir/test/FakeTunerTest.cpp.obj
+.PHONY : test/FakeTunerTest.cpp.obj
+
+test/FakeTunerTest.i: test/FakeTunerTest.cpp.i
+.PHONY : test/FakeTunerTest.i
+
+# target to preprocess a source file
+test/FakeTunerTest.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\FakeTunerTest.dir\build.make CMakeFiles/FakeTunerTest.dir/test/FakeTunerTest.cpp.i
+.PHONY : test/FakeTunerTest.cpp.i
+
+test/FakeTunerTest.s: test/FakeTunerTest.cpp.s
+.PHONY : test/FakeTunerTest.s
+
+# target to generate assembly for a file
+test/FakeTunerTest.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\FakeTunerTest.dir\build.make CMakeFiles/FakeTunerTest.dir/test/FakeTunerTest.cpp.s
+.PHONY : test/FakeTunerTest.cpp.s
 
 test/TVControllerTest.obj: test/TVControllerTest.cpp.obj
 .PHONY : test/TVControllerTest.obj
@@ -309,12 +346,16 @@ help:
 	@echo ... list_install_components
 	@echo ... rebuild_cache
 	@echo ... test
+	@echo ... FakeTunerTest
 	@echo ... TVControllerTest
 	@echo ... TunerTest
 	@echo ... gmock
 	@echo ... gmock_main
 	@echo ... gtest
 	@echo ... gtest_main
+	@echo ... test/FakeTunerTest.obj
+	@echo ... test/FakeTunerTest.i
+	@echo ... test/FakeTunerTest.s
 	@echo ... test/TVControllerTest.obj
 	@echo ... test/TVControllerTest.i
 	@echo ... test/TVControllerTest.s

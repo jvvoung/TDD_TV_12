@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "TunerTest.exe"
+			"path" : "FakeTunerTest.exe"
 		},
 		{
-			"path" : "TunerTest.pdb"
+			"path" : "FakeTunerTest.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -33,13 +33,13 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 22,
+				"line" : 28,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 23,
+				"line" : 29,
 				"parent" : 0
 			},
 			{
@@ -54,7 +54,7 @@
 			{
 				"command" : 3,
 				"file" : 0,
-				"line" : 29,
+				"line" : 34,
 				"parent" : 0
 			},
 			{
@@ -81,10 +81,6 @@
 		{
 			"backtrace" : 2,
 			"id" : "gtest_main::@1ea2dfc0605fe3ab2a3f"
-		},
-		{
-			"backtrace" : 2,
-			"id" : "gmock::@0f7bb11d64f3678238c7"
 		}
 	],
 	"compileGroups" : 
@@ -111,16 +107,6 @@
 					"backtrace" : 2,
 					"isSystem" : true,
 					"path" : "C:/DEV/TDD_TV_Init/build/_deps/googletest-src/googletest"
-				},
-				{
-					"backtrace" : 2,
-					"isSystem" : true,
-					"path" : "C:/DEV/TDD_TV_Init/build/_deps/googletest-src/googlemock/include"
-				},
-				{
-					"backtrace" : 2,
-					"isSystem" : true,
-					"path" : "C:/DEV/TDD_TV_Init/build/_deps/googletest-src/googlemock"
 				}
 			],
 			"language" : "CXX",
@@ -142,10 +128,6 @@
 	[
 		{
 			"backtrace" : 2,
-			"id" : "gmock::@0f7bb11d64f3678238c7"
-		},
-		{
-			"backtrace" : 2,
 			"id" : "gtest::@1ea2dfc0605fe3ab2a3f"
 		},
 		{
@@ -153,7 +135,7 @@
 			"id" : "gtest_main::@1ea2dfc0605fe3ab2a3f"
 		}
 	],
-	"id" : "TunerTest::@6890427a1f51a3e7e1df",
+	"id" : "FakeTunerTest::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -165,11 +147,6 @@
 			{
 				"backtrace" : 2,
 				"fragment" : "lib\\libgtest_main.a",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 2,
-				"fragment" : "lib\\libgmock.a",
 				"role" : "libraries"
 			},
 			{
@@ -189,19 +166,15 @@
 		{
 			"backtrace" : 2,
 			"id" : "gtest_main::@1ea2dfc0605fe3ab2a3f"
-		},
-		{
-			"backtrace" : 2,
-			"id" : "gmock::@0f7bb11d64f3678238c7"
 		}
 	],
-	"name" : "TunerTest",
-	"nameOnDisk" : "TunerTest.exe",
+	"name" : "FakeTunerTest",
+	"nameOnDisk" : "FakeTunerTest.exe",
 	"orderDependencies" : 
 	[
 		{
 			"backtrace" : 6,
-			"id" : "TunerTest::@6890427a1f51a3e7e1df"
+			"id" : "FakeTunerTest::@6890427a1f51a3e7e1df"
 		}
 	],
 	"paths" : 
@@ -224,7 +197,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "test/TunerTest.cpp",
+			"path" : "test/FakeTunerTest.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],
