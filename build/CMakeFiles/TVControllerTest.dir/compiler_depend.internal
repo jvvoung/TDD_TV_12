@@ -39,9 +39,9 @@ CMakeFiles/TVControllerTest.dir/test/TVControllerTest.cpp.obj
  C:/DEV/TDD_TV_Init/build/_deps/googletest-src/googletest/include/gtest/internal/gtest-port.h
  C:/DEV/TDD_TV_Init/build/_deps/googletest-src/googletest/include/gtest/internal/gtest-string.h
  C:/DEV/TDD_TV_Init/build/_deps/googletest-src/googletest/include/gtest/internal/gtest-type-util.h
+ C:/DEV/TDD_TV_Init/include/FakeTuner.h
  C:/DEV/TDD_TV_Init/include/TVController.h
  C:/DEV/TDD_TV_Init/include/Tuner.h
- C:/DEV/TDD_TV_Init/include/remoteKey.h
  C:/mingw64/include/c++/15.2.0/algorithm
  C:/mingw64/include/c++/15.2.0/any
  C:/mingw64/include/c++/15.2.0/array

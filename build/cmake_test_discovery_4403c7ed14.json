@@ -1,15 +1,76 @@
 {
-  "tests": 1,
+  "tests": 12,
   "name": "AllTests",
   "testsuites": [
     {
-      "name": "TVControllerTest",
-      "tests": 1,
+      "name": "ControllerTest",
+      "tests": 8,
       "testsuite": [
         {
-          "name": "testFramework",
+          "name": "PressNumber1ThenConfirm",
           "file": "C:\\DEV\\TDD_TV_Init\\test\\TVControllerTest.cpp",
-          "line": 13
+          "line": 42
+        },
+        {
+          "name": "Press1Then2_AutoChange",
+          "file": "C:\\DEV\\TDD_TV_Init\\test\\TVControllerTest.cpp",
+          "line": 48
+        },
+        {
+          "name": "Press1234_TwoStageChange",
+          "file": "C:\\DEV\\TDD_TV_Init\\test\\TVControllerTest.cpp",
+          "line": 54
+        },
+        {
+          "name": "OtherButtonCancelsBuffer",
+          "file": "C:\\DEV\\TDD_TV_Init\\test\\TVControllerTest.cpp",
+          "line": 62
+        },
+        {
+          "name": "Zero7_SingleDigit7",
+          "file": "C:\\DEV\\TDD_TV_Init\\test\\TVControllerTest.cpp",
+          "line": 71
+        },
+        {
+          "name": "FavoriteAdd_NewChannel",
+          "file": "C:\\DEV\\TDD_TV_Init\\test\\TVControllerTest.cpp",
+          "line": 79
+        },
+        {
+          "name": "FavoriteToggle_Remove",
+          "file": "C:\\DEV\\TDD_TV_Init\\test\\TVControllerTest.cpp",
+          "line": 86
+        },
+        {
+          "name": "FavoriteToggleScenario",
+          "file": "C:\\DEV\\TDD_TV_Init\\test\\TVControllerTest.cpp",
+          "line": 94
+        }
+      ]
+    },
+    {
+      "name": "ControllerMockTest",
+      "tests": 4,
+      "testsuite": [
+        {
+          "name": "PressNumber1Confirm",
+          "file": "C:\\DEV\\TDD_TV_Init\\test\\TVControllerTest.cpp",
+          "line": 108
+        },
+        {
+          "name": "Press1Then2_SetCH12",
+          "file": "C:\\DEV\\TDD_TV_Init\\test\\TVControllerTest.cpp",
+          "line": 114
+        },
+        {
+          "name": "PressFavorite_GetsCurrentCH",
+          "file": "C:\\DEV\\TDD_TV_Init\\test\\TVControllerTest.cpp",
+          "line": 120
+        },
+        {
+          "name": "NextFav_CallsSetCH",
+          "file": "C:\\DEV\\TDD_TV_Init\\test\\TVControllerTest.cpp",
+          "line": 125
         }
       ]
     }

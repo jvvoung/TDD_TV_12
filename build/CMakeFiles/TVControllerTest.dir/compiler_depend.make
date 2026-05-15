@@ -38,9 +38,9 @@ CMakeFiles/TVControllerTest.dir/test/TVControllerTest.cpp.obj: C:/DEV/TDD_TV_Ini
   _deps/googletest-src/googletest/include/gtest/internal/gtest-port.h \
   _deps/googletest-src/googletest/include/gtest/internal/gtest-string.h \
   _deps/googletest-src/googletest/include/gtest/internal/gtest-type-util.h \
+  C:/DEV/TDD_TV_Init/include/FakeTuner.h \
   C:/DEV/TDD_TV_Init/include/TVController.h \
   C:/DEV/TDD_TV_Init/include/Tuner.h \
-  C:/DEV/TDD_TV_Init/include/remoteKey.h \
   C:/mingw64/include/c++/15.2.0/algorithm \
   C:/mingw64/include/c++/15.2.0/any \
   C:/mingw64/include/c++/15.2.0/array \
@@ -381,6 +381,8 @@ _deps/googletest-src/googletest/include/gtest/gtest-death-test.h:
 
 _deps/googletest-src/googletest/include/gtest/gtest-printers.h:
 
+C:/DEV/TDD_TV_Init/include/FakeTuner.h:
+
 _deps/googletest-src/googletest/include/gtest/internal/gtest-port.h:
 
 _deps/googletest-src/googletest/include/gtest/gtest-matchers.h:
@@ -438,8 +440,6 @@ C:/mingw64/include/c++/15.2.0/bits/basic_string.h:
 C:/mingw64/include/c++/15.2.0/bits/allocated_ptr.h:
 
 C:/DEV/TDD_TV_Init/include/TVController.h:
-
-C:/DEV/TDD_TV_Init/include/remoteKey.h:
 
 C:/mingw64/include/c++/15.2.0/algorithm:
 

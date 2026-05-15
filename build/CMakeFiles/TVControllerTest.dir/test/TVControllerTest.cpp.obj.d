@@ -284,7 +284,6 @@ CMakeFiles/TVControllerTest.dir/test/TVControllerTest.cpp.obj: \
  C:/DEV/TDD_TV_Init/build/_deps/googletest-src/googlemock/include/gmock/internal/custom/gmock-generated-actions.h \
  C:/DEV/TDD_TV_Init/build/_deps/googletest-src/googlemock/include/gmock/gmock-more-matchers.h \
  C:/DEV/TDD_TV_Init/build/_deps/googletest-src/googlemock/include/gmock/gmock-nice-strict.h \
- C:/DEV/TDD_TV_Init/include/Tuner.h \
- C:/DEV/TDD_TV_Init/include/TVController.h \
- C:/DEV/TDD_TV_Init/include/Tuner.h \
- C:/DEV/TDD_TV_Init/include/remoteKey.h
+ C:/DEV/TDD_TV_Init/include/FakeTuner.h \
+ C:/DEV/TDD_TV_Init/include/Tuner.h C:/DEV/TDD_TV_Init/include/Tuner.h \
+ C:/DEV/TDD_TV_Init/include/TVController.h

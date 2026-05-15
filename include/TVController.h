@@ -12,32 +12,89 @@
 #define TV_CONTROLLER_H
 
 #include "Tuner.h"
-#include "remoteKey.h"
+#include <algorithm>
 #include <string>
-#include <iostream>
+#include <vector>
 
 class TVController {
-private:
-    Tuner* tuner;
-    std::string processingCH;
+    Tuner& tuner_;
+    int inputBuffer_ = -1;
+    std::vector<int> favorites_;
 
-    void setTunerCh() {
-        // 로그는 테스트의 결과가 절대 아닙니다. 로그가 있는 것을 테스트로 간주하지 마시기 바랍니다.
-        std::cout << "현재 설정하는 채널 : " << processingCH << std::endl;
-        // tuner->setCH(processingCH);
+    bool isValidChannel(int ch) const { return ch >= 0 && ch <= 99; }
+
+    bool isFavorite(int ch) const {
+        return std::find(favorites_.begin(), favorites_.end(), ch) != favorites_.end();
+    }
+
+    void applyChannel(int ch) {
+        if (!isValidChannel(ch)) {
+            throw std::invalid_argument("Invalid channel");
+        }
+        tuner_.setCH(std::to_string(ch));
+    }
+
+    void applyBufferedDigits() {
+        if (inputBuffer_ == -1) {
+            return;
+        }
+        applyChannel(inputBuffer_);
+        inputBuffer_ = -1;
     }
 
 public:
-    explicit TVController(Tuner* tuner) : tuner(tuner), processingCH("") {}
+    explicit TVController(Tuner& tuner) : tuner_(tuner) {}
 
-    void pushButton(remoteKey key) {
-        switch (key) {
-            case remoteKey::KEY_1:
-                processingCH += to_string(key);
-                break;
-            case remoteKey::KEY_OK:
-                setTunerCh();
-                break;
+    void pressNumber(int digit) {
+        if (inputBuffer_ == -1) {
+            inputBuffer_ = digit;
+            return;
+        }
+
+        int ch = inputBuffer_ * 10 + digit;
+        if (inputBuffer_ == 0) {
+            ch = digit;
+        }
+        inputBuffer_ = -1;
+        applyChannel(ch);
+    }
+
+    void pressConfirm() {
+        applyBufferedDigits();
+    }
+
+    void pressOther() {
+        inputBuffer_ = -1;
+    }
+
+    void pressFavorite() {
+        int ch = std::stoi(tuner_.getCurrentCH());
+        if (isFavorite(ch)) {
+            favorites_.erase(
+                std::remove(favorites_.begin(), favorites_.end(), ch),
+                favorites_.end());
+        } else {
+            favorites_.push_back(ch);
+            std::sort(favorites_.begin(), favorites_.end());
+        }
+    }
+
+    void pressNextFavorite() {
+        if (favorites_.empty()) {
+            return;
+        }
+        int cur = std::stoi(tuner_.getCurrentCH());
+        auto it = std::upper_bound(favorites_.begin(), favorites_.end(), cur);
+        int next = (it != favorites_.end()) ? *it : favorites_.front();
+        applyChannel(next);
+    }
+
+    const std::vector<int>& getFavoriteChannels() const { return favorites_; }
+
+    void addFavorite(int ch) {
+        if (!isFavorite(ch)) {
+            favorites_.push_back(ch);
+            std::sort(favorites_.begin(), favorites_.end());
         }
     }
 };
