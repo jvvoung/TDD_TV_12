@@ -1,0 +1,15 @@
+ValidChannels/TunerValidChannelTest.testSetChForValidChannel/"0" 3 0.00979657
+InvalidChannels/TunerInvalidChannelTest.testSetChForInvalidChannel/"-0" 2 0.0133693
+InvalidChannels/TunerInvalidChannelTest.testSetChForInvalidChannel/"-12" 2 0.0148811
+InvalidChannels/TunerInvalidChannelTest.testSetChForInvalidChannel/"-2" 2 0.0124274
+InvalidChannels/TunerInvalidChannelTest.testSetChForInvalidChannel/"100" 2 0.0132736
+InvalidChannels/TunerInvalidChannelTest.testSetChForInvalidChannel/"9999" 2 0.0136391
+TunerTest.initChannel 2 0.0138073
+TunerTest.testSeekCh10times 2 0.0114047
+TunerTest.testSeekCh10timesAfterSetCH 2 0.0139753
+TVControllerTest.testFramework 2 0.0133344
+ValidChannels/TunerValidChannelTest.testSetChForValidChannel/"12" 2 0.0109382
+ValidChannels/TunerValidChannelTest.testSetChForValidChannel/"4" 2 0.0125446
+ValidChannels/TunerValidChannelTest.testSetChForValidChannel/"5" 2 0.0136691
+ValidChannels/TunerValidChannelTest.testSetChForValidChannel/"99" 2 0.0153246
+---
