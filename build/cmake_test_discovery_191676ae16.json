@@ -1,0 +1,52 @@
+{
+  "tests": 8,
+  "name": "AllTests",
+  "testsuites": [
+    {
+      "name": "ControllerMockTest",
+      "tests": 8,
+      "testsuite": [
+        {
+          "name": "PressNumber1Confirm",
+          "file": "C:\\DEV\\TDD_TV_Init\\test\\TVControllerMockTest.cpp",
+          "line": 22
+        },
+        {
+          "name": "Press1Then2_SetCH12",
+          "file": "C:\\DEV\\TDD_TV_Init\\test\\TVControllerMockTest.cpp",
+          "line": 28
+        },
+        {
+          "name": "PressFavorite_GetsCurrentCH",
+          "file": "C:\\DEV\\TDD_TV_Init\\test\\TVControllerMockTest.cpp",
+          "line": 34
+        },
+        {
+          "name": "NextFav_CallsSetCH",
+          "file": "C:\\DEV\\TDD_TV_Init\\test\\TVControllerMockTest.cpp",
+          "line": 39
+        },
+        {
+          "name": "NextFavorite_WrapAround_SetCH1",
+          "file": "C:\\DEV\\TDD_TV_Init\\test\\TVControllerMockTest.cpp",
+          "line": 49
+        },
+        {
+          "name": "Press1234_SetCH12Then34",
+          "file": "C:\\DEV\\TDD_TV_Init\\test\\TVControllerMockTest.cpp",
+          "line": 59
+        },
+        {
+          "name": "Zero7_SetCH7",
+          "file": "C:\\DEV\\TDD_TV_Init\\test\\TVControllerMockTest.cpp",
+          "line": 69
+        },
+        {
+          "name": "NextFavorite_EmptyList_NoSetCH",
+          "file": "C:\\DEV\\TDD_TV_Init\\test\\TVControllerMockTest.cpp",
+          "line": 75
+        }
+      ]
+    }
+  ]
+}

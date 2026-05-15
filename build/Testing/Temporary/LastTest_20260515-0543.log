@@ -1,3 +1,30 @@
-Start testing: May 15 16:05 대한민국 표준시
+Start testing: May 15 16:21 대한민국 표준시
 ----------------------------------------------------------
-End testing: May 15 16:05 대한민국 표준시
+24/38 Testing: ControllerTest.NextFavorite_EmptyList
+24/38 Test: ControllerTest.NextFavorite_EmptyList
+Command: "C:/DEV/TDD_TV_Init/build/TVControllerTest.exe" "--gtest_filter=ControllerTest.NextFavorite_EmptyList" "--gtest_also_run_disabled_tests"
+Directory: C:/DEV/TDD_TV_Init/build
+"ControllerTest.NextFavorite_EmptyList" start time: May 15 16:21 대한민국 표준시
+Output:
+----------------------------------------------------------
+Running main() from C:\DEV\TDD_TV_Init\build\_deps\googletest-src\googletest\src\gtest_main.cc
+Note: Google Test filter = ControllerTest.NextFavorite_EmptyList
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ControllerTest
+[ RUN      ] ControllerTest.NextFavorite_EmptyList
+[       OK ] ControllerTest.NextFavorite_EmptyList (0 ms)
+[----------] 1 test from ControllerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"ControllerTest.NextFavorite_EmptyList" end time: May 15 16:21 대한민국 표준시
+"ControllerTest.NextFavorite_EmptyList" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: May 15 16:21 대한민국 표준시

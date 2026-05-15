@@ -13,6 +13,12 @@
 },
 {
   "directory": "C:/DEV/TDD_TV_Init/build",
+  "command": "C:\\mingw64\\bin\\g++.exe  @CMakeFiles/TVControllerMockTest.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\TVControllerMockTest.dir\\test\\TVControllerMockTest.cpp.obj -c C:\\DEV\\TDD_TV_Init\\test\\TVControllerMockTest.cpp",
+  "file": "C:/DEV/TDD_TV_Init/test/TVControllerMockTest.cpp",
+  "output": "CMakeFiles/TVControllerMockTest.dir/test/TVControllerMockTest.cpp.obj"
+},
+{
+  "directory": "C:/DEV/TDD_TV_Init/build",
   "command": "C:\\mingw64\\bin\\g++.exe  @CMakeFiles/FakeTunerTest.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\FakeTunerTest.dir\\test\\FakeTunerTest.cpp.obj -c C:\\DEV\\TDD_TV_Init\\test\\FakeTunerTest.cpp",
   "file": "C:/DEV/TDD_TV_Init/test/FakeTunerTest.cpp",
   "output": "CMakeFiles/FakeTunerTest.dir/test/FakeTunerTest.cpp.obj"

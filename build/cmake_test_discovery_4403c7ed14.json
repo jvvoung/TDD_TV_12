@@ -1,76 +1,65 @@
 {
-  "tests": 12,
+  "tests": 11,
   "name": "AllTests",
   "testsuites": [
     {
       "name": "ControllerTest",
-      "tests": 8,
+      "tests": 11,
       "testsuite": [
         {
           "name": "PressNumber1ThenConfirm",
           "file": "C:\\DEV\\TDD_TV_Init\\test\\TVControllerTest.cpp",
-          "line": 42
+          "line": 20
         },
         {
           "name": "Press1Then2_AutoChange",
           "file": "C:\\DEV\\TDD_TV_Init\\test\\TVControllerTest.cpp",
-          "line": 48
+          "line": 26
         },
         {
           "name": "Press1234_TwoStageChange",
           "file": "C:\\DEV\\TDD_TV_Init\\test\\TVControllerTest.cpp",
-          "line": 54
+          "line": 32
         },
         {
           "name": "OtherButtonCancelsBuffer",
           "file": "C:\\DEV\\TDD_TV_Init\\test\\TVControllerTest.cpp",
-          "line": 62
+          "line": 40
         },
         {
           "name": "Zero7_SingleDigit7",
           "file": "C:\\DEV\\TDD_TV_Init\\test\\TVControllerTest.cpp",
-          "line": 71
+          "line": 49
         },
         {
           "name": "FavoriteAdd_NewChannel",
           "file": "C:\\DEV\\TDD_TV_Init\\test\\TVControllerTest.cpp",
-          "line": 79
+          "line": 57
         },
         {
           "name": "FavoriteToggle_Remove",
           "file": "C:\\DEV\\TDD_TV_Init\\test\\TVControllerTest.cpp",
-          "line": 86
+          "line": 64
         },
         {
           "name": "FavoriteToggleScenario",
           "file": "C:\\DEV\\TDD_TV_Init\\test\\TVControllerTest.cpp",
-          "line": 94
-        }
-      ]
-    },
-    {
-      "name": "ControllerMockTest",
-      "tests": 4,
-      "testsuite": [
-        {
-          "name": "PressNumber1Confirm",
-          "file": "C:\\DEV\\TDD_TV_Init\\test\\TVControllerTest.cpp",
-          "line": 108
+          "line": 72
         },
         {
-          "name": "Press1Then2_SetCH12",
+          "name": "NextFavorite_Normal",
           "file": "C:\\DEV\\TDD_TV_Init\\test\\TVControllerTest.cpp",
-          "line": 114
+          "line": 86
         },
         {
-          "name": "PressFavorite_GetsCurrentCH",
+          "name": "NextFavorite_WrapAround",
           "file": "C:\\DEV\\TDD_TV_Init\\test\\TVControllerTest.cpp",
-          "line": 120
+          "line": 95
         },
         {
-          "name": "NextFav_CallsSetCH",
+          "name": "NextFavorite_EmptyList",
           "file": "C:\\DEV\\TDD_TV_Init\\test\\TVControllerTest.cpp",
-          "line": 125
+          "line": 103
         }
       ]
     }

@@ -1,5 +1,5 @@
-CMakeFiles/TVControllerTest.dir/test/TVControllerTest.cpp.obj: \
- C:\DEV\TDD_TV_Init\test\TVControllerTest.cpp \
+CMakeFiles/TVControllerMockTest.dir/test/TVControllerMockTest.cpp.obj: \
+ C:\DEV\TDD_TV_Init\test\TVControllerMockTest.cpp \
  C:/DEV/TDD_TV_Init/build/_deps/googletest-src/googletest/include/gtest/gtest.h \
  C:/mingw64/include/c++/15.2.0/cstddef \
  C:/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++config.h \
@@ -248,12 +248,42 @@ CMakeFiles/TVControllerTest.dir/test/TVControllerTest.cpp.obj: \
  C:/DEV/TDD_TV_Init/build/_deps/googletest-src/googletest/include/gtest/gtest-typed-test.h \
  C:/DEV/TDD_TV_Init/build/_deps/googletest-src/googletest/include/gtest/gtest_pred_impl.h \
  C:/DEV/TDD_TV_Init/build/_deps/googletest-src/googletest/include/gtest/gtest_prod.h \
+ C:/DEV/TDD_TV_Init/build/_deps/googletest-src/googlemock/include/gmock/gmock.h \
+ C:/DEV/TDD_TV_Init/build/_deps/googletest-src/googlemock/include/gmock/gmock-actions.h \
  C:/mingw64/include/c++/15.2.0/algorithm \
  C:/mingw64/include/c++/15.2.0/bits/stl_algo.h \
  C:/mingw64/include/c++/15.2.0/bits/algorithmfwd.h \
  C:/mingw64/include/c++/15.2.0/bits/stl_heap.h \
  C:/mingw64/include/c++/15.2.0/bits/uniform_int_dist.h \
  C:/mingw64/include/c++/15.2.0/pstl/glue_algorithm_defs.h \
- C:/DEV/TDD_TV_Init/include/FakeTuner.h \
+ C:/DEV/TDD_TV_Init/build/_deps/googletest-src/googlemock/include/gmock/internal/gmock-internal-utils.h \
+ C:/DEV/TDD_TV_Init/build/_deps/googletest-src/googlemock/include/gmock/internal/gmock-port.h \
+ C:/DEV/TDD_TV_Init/build/_deps/googletest-src/googlemock/include/gmock/internal/custom/gmock-port.h \
+ C:/DEV/TDD_TV_Init/build/_deps/googletest-src/googlemock/include/gmock/internal/gmock-pp.h \
+ C:/DEV/TDD_TV_Init/build/_deps/googletest-src/googlemock/include/gmock/gmock-cardinalities.h \
+ C:/DEV/TDD_TV_Init/build/_deps/googletest-src/googlemock/include/gmock/gmock-function-mocker.h \
+ C:/DEV/TDD_TV_Init/build/_deps/googletest-src/googlemock/include/gmock/gmock-spec-builders.h \
+ C:/DEV/TDD_TV_Init/build/_deps/googletest-src/googlemock/include/gmock/gmock-matchers.h \
+ C:/mingw64/include/c++/15.2.0/cmath \
+ C:/mingw64/x86_64-w64-mingw32/include/math.h \
+ C:/mingw64/include/c++/15.2.0/bits/specfun.h \
+ C:/mingw64/include/c++/15.2.0/tr1/gamma.tcc \
+ C:/mingw64/include/c++/15.2.0/tr1/special_function_util.h \
+ C:/mingw64/include/c++/15.2.0/tr1/bessel_function.tcc \
+ C:/mingw64/include/c++/15.2.0/tr1/beta_function.tcc \
+ C:/mingw64/include/c++/15.2.0/tr1/ell_integral.tcc \
+ C:/mingw64/include/c++/15.2.0/tr1/exp_integral.tcc \
+ C:/mingw64/include/c++/15.2.0/tr1/hypergeometric.tcc \
+ C:/mingw64/include/c++/15.2.0/tr1/legendre_function.tcc \
+ C:/mingw64/include/c++/15.2.0/tr1/modified_bessel_func.tcc \
+ C:/mingw64/include/c++/15.2.0/tr1/poly_hermite.tcc \
+ C:/mingw64/include/c++/15.2.0/tr1/poly_laguerre.tcc \
+ C:/mingw64/include/c++/15.2.0/tr1/riemann_zeta.tcc \
+ C:/DEV/TDD_TV_Init/build/_deps/googletest-src/googlemock/include/gmock/internal/custom/gmock-matchers.h \
+ C:/DEV/TDD_TV_Init/build/_deps/googletest-src/googlemock/include/gmock/gmock-more-actions.h \
+ C:/DEV/TDD_TV_Init/build/_deps/googletest-src/googlemock/include/gmock/internal/custom/gmock-generated-actions.h \
+ C:/DEV/TDD_TV_Init/build/_deps/googletest-src/googlemock/include/gmock/gmock-more-matchers.h \
+ C:/DEV/TDD_TV_Init/build/_deps/googletest-src/googlemock/include/gmock/gmock-nice-strict.h \
+ C:/DEV/TDD_TV_Init/include/MockTuner.h \
  C:/DEV/TDD_TV_Init/include/Tuner.h \
  C:/DEV/TDD_TV_Init/include/TVController.h

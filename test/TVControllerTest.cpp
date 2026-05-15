@@ -1,30 +1,8 @@
 #include <gtest/gtest.h>
-#include <gmock/gmock.h>
 #include <algorithm>
 #include <memory>
 #include "FakeTuner.h"
-#include "Tuner.h"
 #include "TVController.h"
-
-using ::testing::_;
-using ::testing::Return;
-
-class MockTunerForController : public Tuner {
-public:
-    MOCK_METHOD(std::string, seekCH, (), (override));
-    MOCK_METHOD(void, setCH, (const std::string& ch), (override));
-    MOCK_METHOD(std::string, getCurrentCH, (), (override));
-};
-
-class ControllerMockTest : public ::testing::Test {
-protected:
-    MockTunerForController mockTuner;
-    std::unique_ptr<TVController> ctrl;
-
-    void SetUp() override {
-        ctrl = std::make_unique<TVController>(mockTuner);
-    }
-};
 
 class ControllerTest : public ::testing::Test {
 protected:
@@ -103,29 +81,27 @@ TEST_F(ControllerTest, FavoriteToggleScenario) {
     EXPECT_NE(favs.end(), std::find(favs.begin(), favs.end(), 37));
 }
 
-// --- GMock: setCH / getCurrentCH 호출 행위 검증 (교재 11~12페이지) ---
+// --- 기능 3: 다음 선호 채널 (교재 10~11페이지, Fake 상태 검증) ---
 
-TEST_F(ControllerMockTest, PressNumber1Confirm) {
-    EXPECT_CALL(mockTuner, setCH("1")).Times(1);
-    ctrl->pressNumber(1);
-    ctrl->pressConfirm();
-}
-
-TEST_F(ControllerMockTest, Press1Then2_SetCH12) {
-    EXPECT_CALL(mockTuner, setCH("12")).Times(1);
-    ctrl->pressNumber(1);
-    ctrl->pressNumber(2);
-}
-
-TEST_F(ControllerMockTest, PressFavorite_GetsCurrentCH) {
-    EXPECT_CALL(mockTuner, getCurrentCH()).WillOnce(Return("12"));
-    ctrl->pressFavorite();
-}
-
-TEST_F(ControllerMockTest, NextFav_CallsSetCH) {
-    ctrl->addFavorite(12);
-    ctrl->addFavorite(56);
-    EXPECT_CALL(mockTuner, getCurrentCH()).WillOnce(Return("6"));
-    EXPECT_CALL(mockTuner, setCH("12")).Times(1);
+TEST_F(ControllerTest, NextFavorite_Normal) {
+    for (int ch : {1, 4, 12, 56}) {
+        ctrl->addFavorite(ch);
+    }
+    tuner->setCH("6");
     ctrl->pressNextFavorite();
+    EXPECT_EQ("12", tuner->getCurrentCH());
+}
+
+TEST_F(ControllerTest, NextFavorite_WrapAround) {
+    ctrl->addFavorite(1);
+    ctrl->addFavorite(56);
+    tuner->setCH("56");
+    ctrl->pressNextFavorite();
+    EXPECT_EQ("1", tuner->getCurrentCH());
+}
+
+TEST_F(ControllerTest, NextFavorite_EmptyList) {
+    tuner->setCH("6");
+    ctrl->pressNextFavorite();
+    EXPECT_EQ("6", tuner->getCurrentCH());
 }

@@ -197,6 +197,19 @@ TVControllerTest/fast:
 .PHONY : TVControllerTest/fast
 
 #=============================================================================
+# Target rules for targets named TVControllerMockTest
+
+# Build rule for target.
+TVControllerMockTest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 TVControllerMockTest
+.PHONY : TVControllerMockTest
+
+# fast build rule for target.
+TVControllerMockTest/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TVControllerMockTest.dir\build.make CMakeFiles/TVControllerMockTest.dir/build
+.PHONY : TVControllerMockTest/fast
+
+#=============================================================================
 # Target rules for targets named FakeTunerTest
 
 # Build rule for target.
@@ -285,6 +298,30 @@ test/FakeTunerTest.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\FakeTunerTest.dir\build.make CMakeFiles/FakeTunerTest.dir/test/FakeTunerTest.cpp.s
 .PHONY : test/FakeTunerTest.cpp.s
 
+test/TVControllerMockTest.obj: test/TVControllerMockTest.cpp.obj
+.PHONY : test/TVControllerMockTest.obj
+
+# target to build an object file
+test/TVControllerMockTest.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TVControllerMockTest.dir\build.make CMakeFiles/TVControllerMockTest.dir/test/TVControllerMockTest.cpp.obj
+.PHONY : test/TVControllerMockTest.cpp.obj
+
+test/TVControllerMockTest.i: test/TVControllerMockTest.cpp.i
+.PHONY : test/TVControllerMockTest.i
+
+# target to preprocess a source file
+test/TVControllerMockTest.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TVControllerMockTest.dir\build.make CMakeFiles/TVControllerMockTest.dir/test/TVControllerMockTest.cpp.i
+.PHONY : test/TVControllerMockTest.cpp.i
+
+test/TVControllerMockTest.s: test/TVControllerMockTest.cpp.s
+.PHONY : test/TVControllerMockTest.s
+
+# target to generate assembly for a file
+test/TVControllerMockTest.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TVControllerMockTest.dir\build.make CMakeFiles/TVControllerMockTest.dir/test/TVControllerMockTest.cpp.s
+.PHONY : test/TVControllerMockTest.cpp.s
+
 test/TVControllerTest.obj: test/TVControllerTest.cpp.obj
 .PHONY : test/TVControllerTest.obj
 
@@ -347,6 +384,7 @@ help:
 	@echo ... rebuild_cache
 	@echo ... test
 	@echo ... FakeTunerTest
+	@echo ... TVControllerMockTest
 	@echo ... TVControllerTest
 	@echo ... TunerTest
 	@echo ... gmock
@@ -356,6 +394,9 @@ help:
 	@echo ... test/FakeTunerTest.obj
 	@echo ... test/FakeTunerTest.i
 	@echo ... test/FakeTunerTest.s
+	@echo ... test/TVControllerMockTest.obj
+	@echo ... test/TVControllerMockTest.i
+	@echo ... test/TVControllerMockTest.s
 	@echo ... test/TVControllerTest.obj
 	@echo ... test/TVControllerTest.i
 	@echo ... test/TVControllerTest.s
