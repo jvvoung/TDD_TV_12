@@ -1,0 +1,5 @@
+# Build output
+build/
+
+# CMake gtest_discover_tests temporary files
+cmake_test_discovery_*.json
