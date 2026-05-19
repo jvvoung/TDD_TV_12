@@ -20,6 +20,26 @@
    제공된 TunerTest.cpp를 참조한다면 Mock을 사용했을 때 필요한 기능을 좀 더 이해할 수 있습니다. Fake를 사용한 경우에도 필요한 기능을 참고할 수 있습니다.  
   
   
+## 빌드 및 테스트
+
+```bash
+cmake -B build && cmake --build build
+ctest --test-dir build --output-on-failure
+ctest --test-dir build -R GoldenMaster    # Golden Master 회귀만
+ctest --test-dir build -L golden
+```
+
+Golden Master 스냅샷 갱신(의도적 변경 시만):
+
+```bash
+# Windows PowerShell (프로젝트 루트에서)
+$env:UPDATE_GOLDEN="1"
+.\build\Debug\GoldenMasterTest.exe --gtest_filter=GoldenMasterTest.*
+Remove-Item Env:UPDATE_GOLDEN
+```
+
+자세한 역할 분리·거버넌스는 `docs/golden_master.md` 참고.
+
 ## TDD practice 를 적용하여, 잘 구조화된 Controller 모듈을 만들어라.
   
 1. 숫자 버튼으로 채널 변경 동작

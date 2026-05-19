@@ -1,0 +1,2 @@
+# Golden Master snapshots: LF only (avoid CRLF diff noise on Windows)
+test/golden/*.golden text eol=lf
