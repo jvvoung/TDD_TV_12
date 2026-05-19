@@ -130,6 +130,7 @@ protected:
 | TC-DIG-07 | P2 | A1 | 빈 버퍼+OK | `setCH` Times(0) |
 | TC-DIG-08 | P2 | A2 | 9,9 → 99 후 버퍼 "9" | `setCH("99")`; 추가 입력 전까지 `setCH` 없음 |
 | TC-DIG-09 | P2 | — (§3.2) | 무효 버퍼 확정 시 미호출 | `setCH` Times(0) (`TEST_P` Invalid) |
+| TC-ERR-01 | P2 | E14 | `getCurrentCH` 무효 문자열 시 UP/DOWN/선호 no-op | `getCurrentCH` → `"abc"`; `setCH` Times(0) |
 
 ### §1.2 선호 채널 토글
 
@@ -254,6 +255,7 @@ protected:
 | **A6** | `GivenBufferSix_WhenFavToggle_ThenClearedAndToggle` | 버퍼 `"6"` | `KEY_FAVORITE_TOGGLE` | 버퍼 클리어+토글 | `getCurrentCH`; `setCH` Times(0) |
 | **A7** | `GivenZero_WhenOneOnly_ThenNoSetCh` | — | `KEY_1` only | 대기 | `setCH` Times(0) |
 | **A8** | `GivenSingleSearchSix_WhenUp_ThenStillSix` | 검색 {6}, 현재 6 | `KEY_CH_UP` | 6 (래핑) | `setCH("6")` Times(1) — §9.2 |
+| **E14** | `GivenInvalidCurrentCh_WhenUp_ThenNoOp` | `getCurrentCH` → `"abc"` | `KEY_CH_UP` | 변경 없음 | `setCH` Times(0) |
 
 ### 6.3 테스트 ID ↔ 시나리오 ID (추적용)
 
@@ -280,6 +282,9 @@ protected:
 | A6 | TC-FAV-03 |
 | A7 | TC-DIG-06 |
 | A8 | TC-SUPDN-05 |
+| E14 | TC-ERR-01 |
+
+**선호·검색 Given 구성 (private 상태)**: `KEY_FAVORITE_TOGGLE`을 현재 채널에 대해 0~N회 호출해 `{1,4,12,56}` 등을 간접 구성; 검색은 `KEY_CHANNEL_SEARCH` + Mock `seekCH` 시퀀스(`WillOnce` 체인 또는 `InSequence`)로 `4-1`·`6-x` Given 고정.
 
 ---
 
