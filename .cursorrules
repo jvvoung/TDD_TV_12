@@ -1,0 +1,106 @@
+# TDD_TV_Init — Cursor AI 규칙
+
+셋탑박스 리모컨 입력 → 채널 관리 → Tuner 연동. C++17 TDD 실습. 요구사항은 `README.md`, 외부 계약은 `include/Tuner.h`.
+
+## 프로젝트 개요
+
+- **구현·테스트 대상**: `TVController`, `remoteKey` 확장
+- **외부 제공(수정 금지)**: `include/Tuner.h`의 `Tuner` 인터페이스
+- **디렉터리**: `include/`(헤더), `test/`(GTest), 루트 `CMakeLists.txt` — 별도 `src/` 없음
+- **도메인**: 일반 채널 0~99, `remoteKey` enum, `TVController::pushButton(remoteKey)`
+- **Tuner API**: `seekCH()`, `setCH(const std::string&)`, `getCurrentCH()` — 채널은 문자열
+
+## 프로젝트·빌드
+
+- C++17, `CMAKE_CXX_STANDARD 17`, `CMAKE_CXX_STANDARD_REQUIRED ON` 유지
+- 헤더는 `include/`에 두고, `include_directories(include)` 패턴 유지
+- Google Test / Google Mock v1.14.0 — `FetchContent` + `gtest_discover_tests`
+- Configure 후 테스트 실행:
+  - `ctest` (빌드 디렉터리에서)
+  - 또는 개별 타깃: `TunerTest`, `TVControllerTest` 등
+- **새 테스트 타깃** 추가 시 `CMakeLists.txt` 패턴 준수:
+
+```
+add_executable(YourTest test/YourTest.cpp)
+target_link_libraries(YourTest GTest::gtest_main GTest::gmock)
+gtest_discover_tests(YourTest)
+```
+
+- `build/`, `_deps/` 등 빌드 산출물은 수정·커밋 대상이 아님
+
+## 절대 규칙 (변경·위반 금지)
+
+- `include/Tuner.h`의 `Tuner` 클래스 시그니처·가상 메서드 계약 수정 금지
+- Tuner 실제 구현체를 프로덕션 코드로 새로 작성하지 말 것 — 테스트용 `MockTuner` / `FakeTuner`만 허용
+- Tuner는 입력에 대해 **정확히 동작**한다고 가정; Controller 테스트는 Mock 또는 Fake로 `Tuner` 대체
+- 채널 유효 범위: **0~99** (문자열↔정수 변환 시 경계 포함)
+- Samsung 저작권 헤더 블록이 있는 파일(`Tuner.h`, `TVController.h`, `remoteKey.h` 등)에서 해당 블록 삭제·변형 금지
+
+## TDD·구현 규칙
+
+- **Red → Green → Refactor**: 실패 테스트 추가 → 최소 구현으로 Green → Green 유지하며 리팩토링
+- 리팩토링·기능 추가는 **모든 관련 테스트가 Green일 때만** 진행
+- `TVController`는 생성자 주입 `Tuner*` 유지 (`explicit TVController(Tuner* tuner)`)
+- 하드코딩된 실제 Tuner 구현에 의존하지 말 것
+- 동작 명세 출처: `README.md` — 아래 시나리오를 기준으로 구현·테스트
+  1. 숫자 버튼 + 확인 (단일·연속 숫자, 12→34, 45/6 무효화 등)
+  2. 선호채널 추가 토글
+  3. 다음 선호 채널 (목록 내 상향·로테이션)
+  4. 채널검색 → 결과 저장
+  5. 업/다운 — 검색 결과 **없음** (±1, 0↔99 래핑)
+  6. 업/다운 — 검색 결과 **있음** (저장 목록 내 이전/다음)
+- `README.md`에 없는 동작은 임의 추가 금지; 불명확하면 테스트 이름·주석에 가정을 명시
+
+## 테스트 규칙
+
+- Google Test + Google Mock 사용
+- 스타일 참고: `test/TunerTest.cpp` — `TEST_F`, `TEST_P` / `INSTANTIATE_TEST_SUITE_P`, `EXPECT_CALL`, `MOCK_METHOD`
+- 테스트 이름은 Given-When-Then 의도가 드러나게 (한글 또는 영문, `TEST_F`/`TEST` 이름에 반영)
+- Controller 테스트:
+  - `MockTuner`(또는 테스트 파일 내 Mock 클래스) 또는 `FakeTuner`로 `setCH` / `getCurrentCH` / `seekCH` 기대 설정
+  - `EXPECT_CALL`로 Tuner 호출 검증
+  - `std::cout` 등 `TVController` 디버그 로그는 **검증 대상 아님** — assert하지 않음
+- README 시나리오별 **최소 1개 이상** 테스트 권장:
+  - 숫자 입력 + 확인
+  - 연속 숫자 (예: 1→2→12, 1→2→3→4→12→34)
+  - 선호채널 토글
+  - 다음 선호 채널
+  - 채널검색 저장
+  - 업/다운 (검색 결과 있음 / 없음)
+- 경계값 테스트 포함:
+  - 채널 0, 99
+  - 99→업→0, 0→다운→99 래핑
+  - 잘못된 채널: Tuner가 `std::invalid_argument`를 던지는 경우는 **Mock으로만** 검증 (`TunerTest`의 `TunerInvalidChannelTest` 패턴 참고)
+- `TunerTest.cpp`는 Tuner 계약·Mock 사용법 참고용; Tuner 구현 단위 테스트를 새로 늘리지 말 것
+
+## 코드 스타일·구조
+
+- 헤더 가드·기존 네이밍 유지: `remoteKey`, `TVController`, `processingCH`, `pushButton`, `setTunerCh` 등
+- 매직 넘버(0, 99 등)는 named constant로 정리 권장 (예: `MIN_CHANNEL`, `MAX_CHANNEL`)
+- 구현은 `include/*.h` 인라인/헤더 중심 — 기존 패턴 유지, `src/` 디렉터리 추가하지 않음
+- `remoteKey` enum 확장 시 `to_string(remoteKey)` switch에 모든 case 추가 — 일관성 유지
+- `remoteKey`에 README 키 반영: 숫자 0~9, 채널 업/다운, 확인, 채널검색, 선호채널추가, 다음선호채널
+- 채널은 Tuner와 주고받을 때 `std::string` (예: `"12"`, `"0"`)
+
+## AI 작업 시 금지·주의
+
+- `build/`, `_deps/` 수정·커밋 제안 금지
+- Tuner 실제 구현 파일을 프로덕션에 추가하지 말 것 (테스트용 Mock/Fake만)
+- 사용자가 요청하지 않은 대규모 리네이밍·전체 포맷 변경 금지
+- **커밋·PR 생성**은 사용자가 명시적으로 요청할 때만
+- `TunerTest`는 외부 계약 학습용; Controller 작업 시 불필요한 Tuner 테스트 대량 추가 지양
+- 기능 구현 시 `TVController.h`의 `tuner->setCH` 등 주석 처리된 코드를 테스트 Green에 맞게 점진적으로 활성화
+
+## 커버리지 (선택)
+
+- 현재 `CMakeLists.txt`에 gcov/lcov 설정 없음 — 별도 요청 전까지 커버리지 도구 추가 제안하지 않음
+- 커버리지 요청 시: `-fprofile-arcs -ftest-coverage` 등은 별도 브랜치/명시적 요청 하에만 제안
+
+## 작업 체크리스트 (기능 추가 시)
+
+1. `README.md` 해당 절 확인
+2. 실패하는 테스트 1개 작성 (Mock/Fake로 Tuner 기대 설정)
+3. `TVController` / `remoteKey` 최소 변경으로 Green
+4. `ctest` 또는 해당 GTest 타깃으로 전체 Green 확인
+5. Green 유지하며 리팩토링 (중복 제거, 상수 추출)
+6. 관련 README 시나리오 테스트 누락 없는지 확인
