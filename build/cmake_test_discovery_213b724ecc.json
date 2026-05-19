@@ -1,0 +1,42 @@
+{
+  "tests": 6,
+  "name": "AllTests",
+  "testsuites": [
+    {
+      "name": "FakeTunerTest",
+      "tests": 6,
+      "testsuite": [
+        {
+          "name": "initChannelInRange",
+          "file": "C:\\DEV\\TDD_TV_Init\\test\\FakeTunerTest.cpp",
+          "line": 9
+        },
+        {
+          "name": "setCHValidChannel",
+          "file": "C:\\DEV\\TDD_TV_Init\\test\\FakeTunerTest.cpp",
+          "line": 16
+        },
+        {
+          "name": "setCHInvalidChannelThrows",
+          "file": "C:\\DEV\\TDD_TV_Init\\test\\FakeTunerTest.cpp",
+          "line": 21
+        },
+        {
+          "name": "seekCHMovesToNextAvailable",
+          "file": "C:\\DEV\\TDD_TV_Init\\test\\FakeTunerTest.cpp",
+          "line": 26
+        },
+        {
+          "name": "seekCHWrapAround",
+          "file": "C:\\DEV\\TDD_TV_Init\\test\\FakeTunerTest.cpp",
+          "line": 32
+        },
+        {
+          "name": "seekCH10timesReturnsValidChannels",
+          "file": "C:\\DEV\\TDD_TV_Init\\test\\FakeTunerTest.cpp",
+          "line": 38
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/DEV/TDD_TV_Init/build/cmake_install.cmake",
+		"C:/DEV/TDD_TV_Init/build/_deps/googletest-build/cmake_install.cmake",
+		"C:/DEV/TDD_TV_Init/build/_deps/googletest-build/googlemock/cmake_install.cmake",
+		"C:/DEV/TDD_TV_Init/build/_deps/googletest-build/googletest/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

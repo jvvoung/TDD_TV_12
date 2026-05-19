@@ -1,0 +1,87 @@
+{
+  "tests": 15,
+  "name": "AllTests",
+  "testsuites": [
+    {
+      "name": "ControllerTest",
+      "tests": 15,
+      "testsuite": [
+        {
+          "name": "PressNumber1ThenConfirm",
+          "file": "C:\\DEV\\TDD_TV_Init\\test\\TVControllerTest.cpp",
+          "line": 21
+        },
+        {
+          "name": "Press1Then2_AutoChange",
+          "file": "C:\\DEV\\TDD_TV_Init\\test\\TVControllerTest.cpp",
+          "line": 27
+        },
+        {
+          "name": "Press1234_TwoStageChange",
+          "file": "C:\\DEV\\TDD_TV_Init\\test\\TVControllerTest.cpp",
+          "line": 33
+        },
+        {
+          "name": "OtherButtonCancelsBuffer",
+          "file": "C:\\DEV\\TDD_TV_Init\\test\\TVControllerTest.cpp",
+          "line": 43
+        },
+        {
+          "name": "Zero7_SingleDigit7",
+          "file": "C:\\DEV\\TDD_TV_Init\\test\\TVControllerTest.cpp",
+          "line": 53
+        },
+        {
+          "name": "PressInvalidDigitThrows",
+          "file": "C:\\DEV\\TDD_TV_Init\\test\\TVControllerTest.cpp",
+          "line": 59
+        },
+        {
+          "name": "FavoriteAdd_NewChannel",
+          "file": "C:\\DEV\\TDD_TV_Init\\test\\TVControllerTest.cpp",
+          "line": 66
+        },
+        {
+          "name": "FavoriteToggle_Remove",
+          "file": "C:\\DEV\\TDD_TV_Init\\test\\TVControllerTest.cpp",
+          "line": 74
+        },
+        {
+          "name": "FavoriteToggleScenario",
+          "file": "C:\\DEV\\TDD_TV_Init\\test\\TVControllerTest.cpp",
+          "line": 83
+        },
+        {
+          "name": "FavoriteChannelsAreSorted",
+          "file": "C:\\DEV\\TDD_TV_Init\\test\\TVControllerTest.cpp",
+          "line": 96
+        },
+        {
+          "name": "AddFavoriteInvalidChannelThrows",
+          "file": "C:\\DEV\\TDD_TV_Init\\test\\TVControllerTest.cpp",
+          "line": 106
+        },
+        {
+          "name": "NextFavorite_Normal",
+          "file": "C:\\DEV\\TDD_TV_Init\\test\\TVControllerTest.cpp",
+          "line": 113
+        },
+        {
+          "name": "NextFavorite_WrapAround",
+          "file": "C:\\DEV\\TDD_TV_Init\\test\\TVControllerTest.cpp",
+          "line": 123
+        },
+        {
+          "name": "NextFavorite_CurrentChannelNotInFavoriteList",
+          "file": "C:\\DEV\\TDD_TV_Init\\test\\TVControllerTest.cpp",
+          "line": 133
+        },
+        {
+          "name": "NextFavorite_EmptyList",
+          "file": "C:\\DEV\\TDD_TV_Init\\test\\TVControllerTest.cpp",
+          "line": 143
+        }
+      ]
+    }
+  ]
+}
