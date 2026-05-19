@@ -3,9 +3,10 @@
 | 항목 | 내용 |
 |------|------|
 | 프로젝트 | TDD_TV_Init (bestreviewer) |
-| 문서 버전 | 1.0 |
+| 문서 버전 | 1.1 |
 | 최종 검증일 | 2026-05-19 |
-| 검증 근거 | [`Report/05.테스트_결함분석.md`](../Report/05.테스트_결함분석.md), `ctest` 전체 실행 |
+| 검증 근거 | [`Report/05`](../Report/05.테스트_결함분석.md), [`Report/06`](../Report/06.GoldenMaster_회귀테스트_완료보고서.md), `ctest` 전체 실행 |
+| 운영 정책 | [`defect_report.md`](defect_report.md) |
 | SSOT | [`requirements_analysis.md`](requirements_analysis.md), [`test_plan.md`](test_plan.md) |
 | 검증 기준 | GMock `EXPECT_CALL` (`setCH` / `getCurrentCH` / `seekCH`); `std::cout`는 결함 판단 제외 |
 
@@ -20,9 +21,10 @@
 | **Total** | 0 |
 | `TunerTest` | 13 / 13 Passed |
 | `TVControllerTest` | 39 / 39 Passed |
-| **합계** | **52 / 52 Passed** (실패 0) |
+| `GoldenMasterTest` | 26 / 26 Passed |
+| **합계** | **78 / 78 Passed** (실패 0) |
 
-**판정**: 구현 완료(`Report/04`) 및 QA 회귀(`Report/05`) 시점까지, GTest/GMock 기준 **재현 가능한 테스트 실패·생산 코드 결함 0건**.
+**판정**: 구현 완료(`Report/04`), QA 회귀(`Report/05`), Golden Master(`Report/06`) 시점까지, GMock·Golden 기준 **재현 가능한 테스트 실패·생산 코드 결함 0건**.
 
 ---
 
@@ -89,6 +91,7 @@
 cmake -B build
 cmake --build build
 ctest --test-dir build --output-on-failure
+ctest --test-dir build -R GoldenMaster
 ```
 
 실패 시 단건 재현:
@@ -112,15 +115,16 @@ build\Debug\TVControllerTest.exe --gtest_filter=<실패_테스트_이름>
 | 일자 | 버전 | 내용 |
 |------|------|------|
 | 2026-05-19 | 1.0 | 초판 — QA 회귀 52/52 Green, Open 결함 0건, OBS-001 관찰 기록 |
+| 2026-05-19 | 1.1 | Golden Master 26건 반영 — 합계 78/78; 운영 정책은 `docs/defect_report.md` 참조 |
 
 ---
 
 ## 8. 관련 문서
 
 ```
-Report/04.구현_테스트_완료보고서.md
-    └─► Report/05.테스트_결함분석.md
-            └─► docs/defect_list.md  ← 본 문서
+docs/defect_report.md (정책·템플릿)
+    └─► docs/defect_list.md  ← 본 문서 (레지스트리)
+Report/04 → Report/05 → Report/06 → Report/08 (결함 관리 체계)
 ```
 
-*본 목록은 테스트 실패·결함의 단일 레지스트리이다. Open 결함이 생기면 본 문서와 `Report/05`를 동시에 갱신한다.*
+*본 목록은 테스트 실패·결함의 단일 레지스트리이다. Open 결함이 생기면 본 문서와 `Report/05`를 동시에 갱신한다. 분류·보고 형식은 `defect_report.md`를 따른다.*
